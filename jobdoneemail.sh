@@ -11,19 +11,20 @@ cd /home/lisong/phylo/beast/run1/
 
 
 #在shell结尾处
-END_TIME=`date +%s`
+END_TIME=`date +%s`s
 
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`
 EXECUTING_TIME_MINUTE=`expr $EXECUTING_TIME / 60`
 EXECUTING_TIME_HOUR=`expr $EXECUTING_TIME / 3600`
 
 # echo $EXECUTING_TIME with minute or hour measure
+# example: echo "这里是正文" | mutt -s "这里是标题" my@163.com
 
 if [ $EXECUTING_TIME_HOUR -gt 1 ]
 then
-	mutt -s "treeannotator finished about: $EXECUTING_TIME_HOUR hour!" lswang@ibcas.ac.cn
+	echo "Treeannotator run complete with $EXECUTING_TIME_HOUR hour!" | mutt -s "treeannotator finished!" lswang@ibcas.ac.cn
 else 
-	mutt -s "treeannotator finished about: $EXECUTING_TIME_MINUTE minute!" lswang@ibcas.ac.cn
+	echo "Treeannotator run complete with $EXECUTING_TIME_MINUTE minute!" | mutt -s "treeannotator finished!" lswang@ibcas.ac.cn
 fi
 
 # send email with attached files
