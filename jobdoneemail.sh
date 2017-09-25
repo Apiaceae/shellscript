@@ -19,11 +19,11 @@ EXECUTING_TIME_HOUR=`expr $EXECUTING_TIME / 3600`
 
 # echo $EXECUTING_TIME with minute or hour measure
 
-if [$EXECUTING_TIME_HOUR -gt 1 ]
+if [ $EXECUTING_TIME_HOUR -gt 1 ]
 then
-	echo "treeannotator Run Complete! The job take about hour: " | echo $EXECUTING_TIME_HOUR | mutt -s "treeannotator finished!" lswang@ibcas.ac.cn
+	mutt -s "treeannotator finished about: $EXECUTING_TIME_HOUR hour!" lswang@ibcas.ac.cn
 else 
-	echo "treeannotator Run Complete! The job take about minute: " | echo $EXECUTING_TIME_MINUTE | mutt -s "treeannotator finished!" lswang@ibcas.ac.cn
+	mutt -s "treeannotator finished about: $EXECUTING_TIME_MINUTE minute!" lswang@ibcas.ac.cn
 fi
 
 # send email with attached files
