@@ -8,7 +8,7 @@ START_TIME=`date +%s`
 
 # run your programm
 cd /home/lisong/phylo/beast/gmyc/yule/
-beast yule.xml
+/usr/local/beast/bin/beast yule.xml
 
 #在shell结尾处
 END_TIME=`date +%s`
