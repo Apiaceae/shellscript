@@ -11,7 +11,7 @@ cd /home/lisong/phylo/beast/run1/
 
 
 #在shell结尾处
-END_TIME=`date +%s`s
+END_TIME=`date +%s`
 
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`
 EXECUTING_TIME_MINUTE=`expr $EXECUTING_TIME / 60`
@@ -22,9 +22,9 @@ EXECUTING_TIME_HOUR=`expr $EXECUTING_TIME / 3600`
 
 if [ $EXECUTING_TIME_HOUR -gt 1 ]
 then
-	echo "Treeannotator run complete with $EXECUTING_TIME_HOUR hour!" | mutt -s "treeannotator finished!" lswang@ibcas.ac.cn
+	echo "Treeannotator run complete with" $EXECUTING_TIME_HOUR "hour!" | mutt -s "treeannotator finished!" lswang@ibcas.ac.cn
 else 
-	echo "Treeannotator run complete with $EXECUTING_TIME_MINUTE minute!" | mutt -s "treeannotator finished!" lswang@ibcas.ac.cn
+	echo "Treeannotator run complete with" $EXECUTING_TIME_MINUTE "minute!" | mutt -s "treeannotator finished!" lswang@ibcas.ac.cn
 fi
 
 # send email with attached files
